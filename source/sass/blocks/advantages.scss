@@ -1,0 +1,151 @@
+.advantages {
+  margin-bottom: 110px;
+}
+
+.advantages__wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.advantages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1454px) {
+    margin: 0 22px;
+  }
+}
+
+.advantages li {
+  min-height: 300px;
+  box-sizing: border-box;
+  border: 1px solid $advantages-border-grey;
+  border-left: 3px solid $blue;
+  padding: 41px 43px;
+  cursor: pointer;
+  background-color: $white;
+
+  &:hover {
+    background-color: $blue;
+    border: none;
+    padding: 42px 44px 42px 46px;
+  }
+}
+
+.advantages h3 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  color: $blue;
+  margin: 0 0 17px 0;
+}
+
+.advantages svg {
+  margin-bottom: 15px;
+  fill: $blue;
+  stroke: $blue;
+}
+
+.advantages p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $advantages-grey;
+  margin: 0;
+}
+
+.advantages li:hover h3,
+.advantages li:hover p {
+  color: $white;
+}
+
+.advantages li:hover svg {
+  fill: $white;
+  stroke: $white;
+}
+
+@media (max-width: $tablet-width) {
+  .advantages {
+    margin-bottom: 54px;
+  }
+
+  .advantages__wrapper {
+    min-width: 719px;
+    margin: 0 24px 0 25px;
+  }
+
+  .advantages ul {
+    margin: 0;
+    gap: 0;
+    column-gap: 29px;
+    row-gap: 30px;
+  }
+
+  .advantages li {
+    min-height: 232px;
+    padding: 24px 21px 20px 25px;
+    border-left-width: 2px;
+
+    &:hover {
+      padding: 25px 22px 21px 27px;
+    }
+  }
+
+  .advantages h3 {
+    margin-bottom: 8px;
+  }
+
+  .advantages svg {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .advantages {
+    margin-bottom: 37px;
+  }
+
+  .advantages__wrapper {
+    min-width: 290px;
+    margin: 0 15px;
+  }
+
+  .advantages ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .advantages li {
+    padding: 24px 16px 24px 24px;
+    margin-bottom: 20px;
+
+    &:hover {
+      padding: 25px 17px 25px 26px;
+    }
+  }
+
+  .advantages h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 9px;
+  }
+
+  .advantages svg {
+    margin-bottom: 8px;
+  }
+
+  .advantages .advantages__suppliers {
+    padding-right: 13px;
+
+    &:hover {
+      padding-right: 14px;
+    }
+  }
+}

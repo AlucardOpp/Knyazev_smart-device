@@ -1,0 +1,146 @@
+.company__wrapper {
+  max-width: 1218px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+.company h2 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  margin: 0 0 21px 0;
+  font-size: 36px;
+  line-height: 51px;
+  color: $advantages-grey;
+}
+
+.company p {
+  margin: 0 0 19px 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $advantages-grey;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.company__container {
+  max-width: 984px;
+  margin: -5px 0 0 -16px;
+
+  @media (max-width: 1199px) {
+    margin-right: 20px;
+  }
+}
+
+.company__point {
+  display: none;
+}
+
+.company__container a {
+  text-decoration: none;
+  box-sizing: border-box;
+  width: 180px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $blue;
+  border: 1px solid $blue;
+  border-radius: 5px;
+  margin-top: 39px;
+  background-color: $white;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .company__wrapper {
+    max-width: none;
+    min-width: 720px;
+    margin: 0 24px 0 10px;
+  }
+
+  .company h2 {
+    font-size: 32px;
+    line-height: 45px;
+    margin-bottom: 25px;
+  }
+
+  .company p {
+    margin-left: 3px;
+  }
+
+  .company picture,
+  .company img {
+    width: 244px;
+    height: 362px;
+  }
+
+  .company img {
+    margin-left: -10px;
+  }
+
+  .company__container {
+    margin: 2px 0 0 -44px;
+  }
+
+  .company__point {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .company__text-tablet {
+    display: none;
+  }
+
+  .company__container a {
+    margin: 42px 0 0 3px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .company__wrapper {
+    grid-template-columns: 1fr;
+    min-width: 292px;
+    margin: 0 14px;
+  }
+
+  .company img,
+  .company picture {
+    display: none;
+  }
+
+  .company__container {
+    margin: 0;
+  }
+
+  .company h2 {
+    font-size: 28px;
+    line-height: 39px;
+    margin-bottom: 20px;
+  }
+
+  .company p {
+    margin-bottom: 40px;
+  }
+
+  .company__container a {
+    width: calc(100% - 112px);
+    margin: -11px 0 0 3px;
+  }
+}

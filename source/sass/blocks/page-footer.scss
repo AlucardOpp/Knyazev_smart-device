@@ -1,0 +1,137 @@
+.page-footer {
+  padding-top: 65px;
+}
+
+.page-footer__wrapper {
+  max-width: 1412px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  @media (max-width: 1454px) {
+    margin: 0 22px;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+.page-footer__container button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $footer-title-black;
+  margin: 0;
+  cursor: text;
+}
+
+.page-footer__container ul:first-child {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: $tablet-width) {
+  .page-footer {
+    padding-top: 19px;
+  }
+
+  .page-footer__wrapper {
+    max-width: none;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-footer {
+    padding-top: 46px;
+  }
+
+  .page-footer__wrapper {
+    flex-direction: column;
+  }
+
+  .page-footer__container ul {
+    flex-direction: column;
+  }
+
+  .page-footer__item ul {
+    margin: 6px 33px 23px 15px;
+    display: none;
+  }
+
+  .page-footer__item--show ul {
+    display: flex;
+  }
+
+  .page-footer__item--nojs ul {
+    display: flex;
+  }
+
+  .page-footer__item button {
+    padding: 29px 36px 27px 15px;
+    width: 100%;
+    cursor: pointer;
+    text-align: start;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 16px;
+      right: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 1px solid $minus-plus-grey;
+      z-index: -1;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 1px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-bottom: 1px solid $minus-plus-grey;
+      right: 17px;
+      z-index: -1;
+    }
+  }
+
+  .page-footer__item--show button {
+    &::after {
+      display: none;
+    }
+  }
+
+  .page-footer__item--nojs button {
+    cursor: default;
+  }
+
+  .page-footer__item section {
+    margin-left: 0;
+    border-bottom: 1px solid $footer-border;
+  }
+
+  .page-footer__item--nojs section {
+    &::after {
+      display: none;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}

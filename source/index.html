@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Велосипеды</title>
+  <title>Smart Device</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Велосипеды">
-  <link rel="preload" href="./fonts/opensans.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/opensansbold.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/opensanslight.woff2" as="font" crossorigin>
-  <link rel="preload" href="./fonts/opensanssemibold.woff2" as="font" crossorigin>
+  <meta name="description" content="Smart Device - печатные платы">
+  <link rel="preload" href="./fonts/PTMono-Regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/Roboto-Medium.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/RobotoCondensed-Regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="./fonts/RobotoCondensed-Bold.woff2" as="font" crossorigin>
   <link rel="stylesheet" href="./css/normalize.min.css">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
@@ -19,119 +19,157 @@
 
   <header class="page-header">
     <div class="page-header__wrapper page-header__wrapper--nojs">
-      <a href="#" class="page-header__link" aria-label="Переход на главную страницу">
-        <svg width="68" height="21">
-          <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
-        </svg>
-      </a>
-      <nav class="main-nav main-nav--nojs">
-        <button class="main-nav__toggle main-nav__toggle--nojs" type="button" aria-label="Открыть/закрыть меню навигации"></button>
+      <div class="page-header__container">
+        <a href="#" aria-label="Переход на главную страницу">
+          <img src="./img/logo.svg" width="52" height="52" alt="Логотип компании">
+        </a>
+        <div class="page-header__title">
+          <strong>Smart Device</strong>
+          <p>умные технологии</p>
+        </div>
+      </div>
+      <div id="contacts" class="page-header__contacts contacts">
         <ul>
-          <li>
-            <a href="#facts" aria-label="Переход к секции О нас">О нас</a>
+          <li class="contacts__item contacts__item--mail">
+            <a class="contacts__link contacts__link--mail" href="mailto:info@sd.ru" aria-label="Написать на почту компании">
+              <svg width="25" height="19">
+                <use xlink:href="./img/sprite_auto.svg#icon-mail"></use>
+              </svg>
+              <span>info@sd.ru</span>
+            </a>
           </li>
-          <li>
-            <a href="#types" aria-label="Переход к секции Виды велосипедов">Виды велосипедов</a>
-          </li>
-          <li>
-            <a href="#video" aria-label="Переход к секции Видео про велосипеды">Видео про велосипеды</a>
-          </li>
-          <li>
-            <a href="#contacts" aria-label="Переход к секции Контакты">Контакты</a>
+          <li class="contacts__item contacts__item--phone">
+            <a class="contacts__link contacts__link--phone" href="tel:+74950005252" aria-label="Позвонить по телефону компании">
+              <svg width="24" height="24">
+                <use xlink:href="./img/sprite_auto.svg#icon-phone"></use>
+              </svg>
+              <span>+7 (495) 000 52 52</span>
+            </a>
           </li>
         </ul>
-      </nav>
+      </div>
+      <a href="#" class="page-header__link" aria-label="Открытие формы заказа звонка">Заказать звонок</a>
     </div>
   </header>
 
-  <main>
+  <main class="page-main">
     <section class="promo">
       <div class="promo__wrapper">
-        <div class="promo__container">
-          <a href="#" class="promo__link" aria-label="Переход на главную страницу">
-            <svg width="68" height="21">
-              <use xlink:href="./img/sprite_auto.svg#icon-logo"></use>
-            </svg>
-          </a>
-          <h1>Мы продаем велосипеды</h1>
-          <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
+        <h1>Печатные платы</h1>
+        <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
+        <a class="promo__consultation" href="#form" aria-label="Переход к форме">
+          <p>Получить бесплатную консультацию</p><span>Бесплатная консультация</span>
+        </a>
+        <a class="promo__scroll" href="#advantages" aria-label="Переход к преимуществам">Скролл вниз</a>
+      </div>
+    </section>
+    <div class="page-main__container">
+      <section id="advantages" class="advantages">
+        <h2 class="visually-hidden">Преимущества</h2>
+        <div class="advantages__wrapper">
+          <ul>
+            <li>
+              <svg width="29" height="35">
+                <use xlink:href="./img/sprite_auto.svg#icon-terms"></use>
+              </svg>
+              <h3>Оперативные сроки</h3>
+              <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
+            </li>
+            <li class="advantages__suppliers">
+              <svg width="35" height="35">
+                <use xlink:href="./img/sprite_auto.svg#icon-suppliers"></use>
+              </svg>
+              <h3>Крупные поставщики</h3>
+              <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
+            </li>
+            <li>
+              <svg width="36" height="31">
+                <use xlink:href="./img/sprite_auto.svg#icon-confidentiality"></use>
+              </svg>
+              <h3>Полная конфиденциальность</h3>
+              <p>По желанию клиента мы обеспечиваем полную конфеденциальность.</p>
+            </li>
+            <li>
+              <svg width="35" height="35">
+                <use xlink:href="./img/sprite_auto.svg#icon-personalization"></use>
+              </svg>
+              <h3>Персонализация стоимости</h3>
+              <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
+            </li>
+          </ul>
         </div>
-        <form class="promo__form form" action="https://echo.htmlacademy.ru" method="post">
-          <p>Заполните поля ниже и мы подберем велосипед Вашей мечты</p>
-          <div class="form__field">
-            <label class="visually-hidden" for="name">Имя</label>
-            <input type="text" id="name" name="name" aria-label="Поле заполнения имени" placeholder="Введите Ваше Имя" autocomplete="off" required>
+      </section>
+      <section id="company" class="company">
+        <div class="company__wrapper">
+          <picture>
+            <source type="image/webp" srcset="./img/2005-tablet.webp 1x, ./img/2005-tablet@2x.webp 2x">
+            <!-- 1х: 220px; 2x: 440px -->
+            <img width="220" height="317" src="./img/2005-tablet.png" srcset="./img/2005-tablet@2x.png 2x" alt="">
+          </picture>
+          <div class="company__container">
+            <h2>О компании</h2>
+            <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+            <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог<span class="company__text-tablet"> (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России</span>.<span class="company__point">.</span></p>
+            <a href="#" aria-label="Переход на страницу о компании">Подробнее</a>
           </div>
-          <div class="form__field">
-            <label class="visually-hidden" for="tel">Телефон</label>
-            <input type="tel" id="tel" name="tel" aria-label="Поле заполнения телефона" placeholder="Введите Ваш номер телефона" autocomplete="off" required>
-          </div>
-          <button aria-label="Отправить заполненные данные" type="submit">Подобрать велосипед мечты</button>
-        </form>
-      </div>
-    </section>
-    <section id="facts" class="facts">
-      <div class="facts__wrapper">
-        <h2>Несколько фактов о нас</h2>
-        <ol>
-          <li>
-            <p>Самый широкий выбор велосипедов!</p>
-          </li>
-          <li>
-            <p>Доставка велосипедов по всей России!</p>
-          </li>
-          <li>
-            <p>Большой выбор крутых аксессуаров!</p>
-          </li>
-          <li>
-            <p>Профессиональные консультации!</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-    <section id="types" class="bicycles-types">
-      <div class="bicycles-types__wrapper">
-        <h2>Виды велосипедов</h2>
+        </div>
+      </section>
+    </div>
+    <section id="goods" class="goods">
+      <div class="goods__wrapper">
+        <h2>Service Device предлагает следующие товары и услуги</h2>
         <ul>
-          <li class="bicycles-types__bicycle bicycles-types__bicycle--road">
-            <picture>
-              <source type="image/webp" srcset="./img/road-bike.webp 1x, ./img/road-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="./img/road-bike.jpg" srcset="./img/road-bike@2x.jpg 2x" width="342" height="503" alt="Изображение дорожного велосипеда">
-            </picture>
-            <h3>Дорожный велосипед</h3>
+          <li class="goods__item goods__item--production">
+            <a href="#" aria-label="Переход на страницу товара/услуги">
+              <h3>Производство печатных плат</h3>
+            </a>
           </li>
-          <li class="bicycles-types__bicycle bicycles-types__bicycle--mountain">
-            <picture>
-              <source type="image/webp" srcset="./img/mountain-bike.webp 1x, ./img/mountain-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="./img/mountain-bike.jpg" srcset="./img/mountain-bike@2x.jpg 2x" width="342" height="566" alt="Изображение горного велосипеда">
-            </picture>
-            <h3>Горный велосипед</h3>
+          <li class="goods__item goods__item--assembly">
+            <a href="#" aria-label="Переход на страницу товара/услуги">
+              <h3>Монтаж печатных плат</h3>
+            </a>
           </li>
-          <li class="bicycles-types__bicycle bicycles-types__bicycle--children">
-            <picture>
-              <source type="image/webp" srcset="./img/children-bike.webp 1x, ./img/children-bike@2x.webp 2x">
-              <!-- 1х: 342px; 2x: 684px -->
-              <img src="./img/children-bike.jpg" srcset="./img/children-bike@2x.jpg 2x" width="342" height="513" alt="Изображение детского велосипеда">
-            </picture>
-            <h3>Детский велосипед</h3>
+          <li class="goods__item goods__item--components">
+            <a href="#" aria-label="Переход на страницу товара/услуги">
+              <h3>Комплектующие для светотехники</h3>
+            </a>
           </li>
         </ul>
       </div>
     </section>
-    <section id="video" class="video">
-      <div class="video__wrapper">
-        <h2>Видео про велосипеды</h2>
-        <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя.</p>
-        <div class="video__container">
+    <section id="form" class="form">
+      <div class="form__container">
+        <div class="form__wrapper">
           <picture>
-            <source type="image/webp" srcset="./img/video-bike.webp 1x, ./img/video-bike@2x.webp 2x">
-            <!-- 1х: 930px; 2x: 1860px -->
-            <img src="./img/video-bike.jpg" srcset="./img/video-bike@2x.jpg 2x" width="930" height="522" alt="Изображение велосипеда">
+            <source type="image/webp" srcset="./img/form-background.webp 1x, ./img/form-background@2x.webp 2x">
+            <!-- 1х: 511px; 2x: 1022px -->
+            <img width="511" height="288" src="./img/form-background.png" srcset="./img/form-background@2x.png 2x" alt="">
           </picture>
-          <button class="video__button" type="button" aria-label="Включить видео">
-          </button>
+          <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
+            <h2>Остались вопросы? Задайте их нам!</h2>
+            <p>Мы проконсультируем Вас бесплатно</p>
+            <div class="form__inputs">
+              <div class="form__field">
+                <label class="visually-hidden" for="name-form">Имя</label>
+                <input type="text" id="name-form" name="name-form" aria-label="Поле заполнения имени" placeholder="Имя" autocomplete="off" required>
+              </div>
+              <div class="form__field">
+                <label class="visually-hidden" for="tel-form">Телефон</label>
+                <input type="text" id="tel-form" name="tel-form" aria-label="Поле заполнения телефона" placeholder="Телефон" autocomplete="off" required>
+              </div>
+            </div>
+            <div class="form__field">
+              <label class="visually-hidden" for="question-form">Ваш вопрос</label>
+              <textarea id="question-form" name="question-form" aria-label="Поле заполнения вопроса" placeholder="Ваш вопрос" autocomplete="off" required></textarea>
+            </div>
+            <div class="form__agree">
+              <button class="form__button" type="submit" aria-label="Отправить форму">Задать вопрос</button>
+              <div class="form__checkbox">
+                <input class="visually-hidden" type="checkbox" name="agree-form" id="agree-form" required aria-label="Согласие на обработку данных" checked>
+                <label for="agree-form">Я согласен на обработку персональных данных</label>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -139,27 +177,139 @@
 
   <footer class="page-footer">
     <div class="page-footer__wrapper">
-      <section class="our-location">
-        <h2>Как нас найти?</h2>
-        <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
+      <section class="socials">
+        <div class="socials__wrapper">
+          <h2 class="visually-hidden">Социальные сети</h2>
+          <div class="socials__container">
+            <a href="#" aria-label="Переход на главную страницу">
+              <img src="./img/logo.svg" width="52" height="52" alt="Логотип компании">
+            </a>
+            <div class="socials__title">
+              <strong>Service Device</strong>
+              <p>умные технологии</p>
+            </div>
+          </div>
+          <p>1999-2018 SD Service Devices</p>
+          <ul>
+            <li>
+              <a class="socials__link" href="#" aria-label="Переход на фэйсбук страницу компании">
+                <svg width="27" height="27">
+                  <use xlink:href="./img/sprite_auto.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="#" aria-label="Переход на страницу одноклассников компании">
+                <svg width="27" height="27">
+                  <use xlink:href="./img/sprite_auto.svg#icon-ok"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="#" aria-label="Переход на страницу вконтакте компании">
+                <svg width="27" height="27">
+                  <use xlink:href="./img/sprite_auto.svg#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
-      <section class="map">
-        <h2 class="visually-hidden">Карта</h2>
-        <iframe title="Интерактивная карта" src="https://yandex.ru/map-widget/v1/-/CCUUyFCUOC" width="957" height="530" style="border: 0;" allowfullscreen loading="lazy"></iframe>
-      </section>
-      <section id="contacts" class="contacts">
-        <h2 class="visually-hidden">Контактные данные</h2>
+      <div class="page-footer__container">
         <ul>
-          <li>
-            <a class="contacts__link contacts__link--mail" href="mailto:puteshestviemechta@gmail.ru" aria-label="Написать на почту компании">puteshestviemechta@gmail.ru</a>
+          <li data-accordion="sections" class="page-footer__item page-footer__item--nojs">
+            <section class="page-footer__sections sections">
+              <h2><button class="sections__button" data-accordion="sections" type="button" aria-label="Открыть вложенную информацию">Разделы сайта</button></h2>
+              <ul data-accordion="sections">
+                <li>
+                  <a href="#company" aria-label="Переход к разделу о компании">О компании</a>
+                </li>
+                <li class="sections__products">
+                  <a href="#goods" aria-label="Переход к разделу товаров и услуг">Продукты</a>
+                </li>
+                <li class="sections__production">
+                  <a href="#goods" aria-label="Переход к разделу производства печатных плат">Производство печатных плат</a>
+                </li>
+                <li class="sections__mounting">
+                  <a href="#goods" aria-label="Переход к разделу монтажа печатных плат">Монтаж печатных плат</a>
+                </li>
+                <li>
+                  <a class="sections__letter-spacing" href="#goods" aria-label="Переход к разделу комплектующих">Комплектующие</a>
+                </li>
+                <li>
+                  <a class="sections__letter-spacing" href="#" aria-label="Переход к разделу доставки">Доставка</a>
+                </li>
+                <li>
+                  <a class="sections__letter-spacing" href="#contacts" aria-label="Переход к контактам">Контакты</a>
+                </li>
+              </ul>
+            </section>
           </li>
-          <li>
-            <a class="contacts__link contacts__link--phone" href="tel:+749978468446" aria-label="Позвонить по телефону компании">+7 (499) -784-684-46</a>
+          <li data-accordion="office" class="page-footer__item page-footer__item--nojs">
+            <section class="office">
+              <h2><button class="office__button" data-accordion="office" type="button" aria-label="Открыть вложенную информацию">Наш офис</button></h2>
+              <ul data-accordion="office">
+                <li>
+                  <a href="https://goo.gl/maps/foHUvYod4HQ9cTaD7" aria-label="Переход на карту с адресом офиса" target="_blank">г. Мытищи, Олимпийский проспект, д.10</a>
+                </li>
+                <li>
+                  <a href="tel:+74955894050" aria-label="Позвонить на номер компании">+7 (495) 589-40-50</a>
+                </li>
+                <li>
+                  <a href="tel:+79250038767" aria-label="Позвонить на номер компании">+7 (925) 003-87-67</a>
+                </li>
+                <li>
+                  <a href="tel:+792692608079" aria-label="Позвонить на номер компании">+7 (926) 926-080-79</a>
+                </li>
+              </ul>
+            </section>
           </li>
         </ul>
-      </section>
+      </div>
     </div>
+    <section class="copyright">
+      <div class="copyright__wrapper">
+        <h2 class="visually-hidden">Копирайт</h2>
+        <div class="copyright__rights">
+          <p>Все права защищены</p>
+        </div>
+        <div class="copyright__service">
+          <p>1999-2018 SD Service Devices</p>
+        </div>
+        <a class="copyright__conditions" href="#" aria-label="Переход на страницу с условиями конфиденциальности">Условия конфиденциальности</a>
+        <div class="copyright__developed">
+          <p>Developed by wow studio</p>
+        </div>
+      </div>
+    </section>
   </footer>
+
+  <div class="overlay"></div>
+
+  <form class="consultation" action="https://echo.htmlacademy.ru" method="post">
+    <div class="consultation__wrapper">
+      <button type="button" class="consultation__close" aria-label="Закрыть форму"></button>
+      <h2>Закажите звонок</h2>
+      <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <div class="consultation__field">
+        <label class="visually-hidden" for="name-consultation">Имя</label>
+        <input type="text" id="name-consultation" name="name-consultation" aria-label="Поле заполнения имени" placeholder="Имя" autocomplete="off" required>
+      </div>
+      <div class="consultation__field consultation__field--tel">
+        <label class="visually-hidden" for="tel-consultation">Телефон</label>
+        <input type="text" id="tel-consultation" name="tel-consultation" aria-label="Поле заполнения телефона" placeholder="Телефон" autocomplete="off" required>
+      </div>
+      <div class="consultation__field">
+        <label class="visually-hidden" for="question-consultation">Ваш вопрос</label>
+        <textarea id="question-consultation" name="question-consultation" aria-label="Поле заполнения вопроса" placeholder="Ваш вопрос" autocomplete="off" required></textarea>
+      </div>
+      <button class="consultation__button" type="submit" aria-label="Отправить форму">Отправить</button>
+      <div class="consultation__container">
+        <input class="visually-hidden" type="checkbox" name="agree-consultation" id="agree-consultation" required aria-label="Согласие на обработку данных" checked>
+        <label for="agree-consultation">Я согласен на обработку персональных данных</label>
+      </div>
+    </div>
+  </form>
 
   <script src="./js/vendor.js"></script>
   <script type="module" src="./js/main.js"></script>

@@ -1,0 +1,143 @@
+.socials {
+  margin-right: 208px;
+
+  @media (max-width: 1454px) {
+    margin-right: 0;
+  }
+}
+
+.socials p {
+  display: none;
+}
+
+.socials ul {
+  list-style: none;
+  margin: 0 0 0 -2px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  row-gap: 10px;
+  column-gap: 16px;
+}
+
+.socials__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-left: -2px;
+}
+
+.socials__container a {
+  margin-right: 16px;
+  cursor: default;
+}
+
+.socials__title strong {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  color: $black-service;
+}
+
+.socials__title p {
+  display: block;
+  margin: 0;
+  font-weight: 500;
+  font-family: "Roboto", "Arial", sans-serif;
+  color: $technologies-grey;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.socials__link svg {
+  fill: $socials-svg-grey;
+}
+
+.socials__link:hover svg {
+  fill: $blue;
+}
+
+.socials__link:active svg {
+  fill: $blue;
+  opacity: 0.7;
+}
+
+@media (max-width: $tablet-width) {
+  .socials {
+    padding-bottom: 21px;
+    border-bottom: 1px solid $footer-border;
+    width: 100%;
+    margin-bottom: 38px;
+  }
+
+  .socials__wrapper {
+    margin: 0 22px 0 26px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+  }
+
+  .socials p {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    opacity: 0.5;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $footer-title-black;
+    margin: 0 67px 0 87px;
+  }
+
+  .socials__title p {
+    display: block;
+    margin: 1px 0 0 0;
+    font-weight: 500;
+    font-family: "Roboto", "Arial", sans-serif;
+    color: $technologies-grey;
+    font-size: 12px;
+    line-height: 14px;
+    opacity: 1;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .socials__container {
+    margin: 0 0 0 -1px;
+  }
+
+  .socials ul {
+    margin-left: 0;
+    justify-self: end;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .socials {
+    padding-bottom: 50px;
+    margin-bottom: 0;
+  }
+
+  .socials__wrapper {
+    margin: 0 43px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .socials__container {
+    margin: 0 0 22px 0;
+  }
+
+  .socials p {
+    margin: 0 0 31px 0;
+    text-align: center;
+  }
+
+  .socials__title p {
+    text-align: start;
+    margin: 0;
+  }
+}

@@ -1,0 +1,61 @@
+.office {
+  max-width: 333px;
+  margin: 0 2px 0 auto;
+
+  @media (max-width: 1454px) {
+    margin-left: 0;
+  }
+}
+
+.office h2 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: $footer-title-black;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  margin: 0 0 25px 2px;
+}
+
+.office ul {
+  list-style: none;
+  padding: 0;
+  display: block;
+}
+
+.office a {
+  text-decoration: none;
+  margin: 0;
+  color: $footer-title-black;
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    color: $blue;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .office {
+    margin-right: 35px;
+    max-width: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .office {
+    margin-right: 0;
+  }
+
+  .office h2 {
+    margin: 0;
+  }
+}

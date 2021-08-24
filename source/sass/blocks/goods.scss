@@ -26,6 +26,7 @@
   min-height: 620px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: $goods-item-background-grey;
 
   &--production {
     background-image: url("../img/production-background.png");

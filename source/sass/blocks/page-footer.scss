@@ -33,14 +33,21 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  column-gap: 7px;
 }
 
 @media (max-width: $tablet-width) {
   .page-footer {
     padding-top: 19px;
+  }
+
+  .page-footer__container ul:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 0;
   }
 
   .page-footer__wrapper {

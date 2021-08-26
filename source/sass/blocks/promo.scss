@@ -1,11 +1,12 @@
 .promo {
   background-color: $promo-background-dark-blue;
   margin-top: -89px;
-  padding: 315px 0 127px 0;
+  padding: 315px 0 128px 0;
   background-repeat: no-repeat;
   background-image: url("../img/background-mask-promo.png");
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 
   @media (min-resolution: 2dppx) {
     background-image: url("../img/background-mask-promo@2x.png");
@@ -48,13 +49,43 @@
     z-index: -1;
   }
 
-  @media (max-width: 1655px) {
+  @media (max-width: 1424px) {
     &::before {
-      right: 51px;
+      right: -35px;
     }
 
     &::after {
-      right: 8px;
+      right: -78px;
+    }
+  }
+
+  @media (max-width: 1324px) {
+    &::before {
+      right: -135px;
+    }
+
+    &::after {
+      right: -178px;
+    }
+  }
+
+  @media (max-width: 1224px) {
+    &::before {
+      right: -235px;
+    }
+
+    &::after {
+      right: -278px;
+    }
+  }
+
+  @media (max-width: 1124px) {
+    &::before {
+      right: -335px;
+    }
+
+    &::after {
+      right: -378px;
     }
   }
 

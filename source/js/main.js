@@ -1,5 +1,5 @@
 'use strict';
-
+const FOCUSABLE_ELEMENTS_STRING = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 const pageHeaderLink = document.querySelector('.page-header__link');
 const pageFooterContainer = document.querySelector('.page-footer__container');
 const pageFooterItems = document.querySelectorAll('.page-footer__item');
@@ -16,6 +16,7 @@ const textareaConsultationQuestion = document.querySelector('#question-consultat
 const inputFormName = document.querySelector('#name-form');
 const inputFormTel = document.querySelector('#tel-form');
 const textareaFormQuestion = document.querySelector('#question-form');
+let lastFocusedElement;
 let isStorageSupport = true;
 let storageName = '';
 let storageTel = '';
@@ -43,7 +44,7 @@ substituteData(storageTel, inputFormTel);
 substituteData(storageQuestion, textareaFormQuestion);
 
 if (inputFormTel) {
-  $(inputFormTel).mask("+7(9999999999)");
+  $(inputFormTel).mask('+7(999)999-9999');
 }
 
 formForm.addEventListener('submit', () => {
@@ -71,6 +72,7 @@ if (consultationForm && pageHeaderLink && consultationClose) {
     }
     body.classList.remove('body--hidden');
     html.classList.remove('page--hidden');
+    lastFocusedElement.focus();
   }
 
   const onCloseClick = () => {
@@ -88,11 +90,31 @@ if (consultationForm && pageHeaderLink && consultationClose) {
   };
 
   pageHeaderLink.addEventListener('click', () => {
+    lastFocusedElement = document.activeElement;
     consultationForm.classList.add('consultation--show');
     inputConsultationName.focus();
-    $(inputConsultationTel).mask("+7(9999999999)");
+    $(inputConsultationTel).mask('+7(999)999-9999');
+    let focusableElements = consultationForm.querySelectorAll(FOCUSABLE_ELEMENTS_STRING);
+    focusableElements = Array.prototype.slice.call(focusableElements);
+    let firstTabStop = focusableElements[0];
+    let lastTabStop = focusableElements[focusableElements.length - 1];
     document.addEventListener('keydown', onEscKeydown);
     document.addEventListener('click', onOverlayClick);
+    consultationForm.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Tab') {
+        if (evt.shiftKey) {
+          if (document.activeElement === firstTabStop) {
+            evt.preventDefault();
+            lastTabStop.focus();
+          }
+        } else {
+          if (document.activeElement === lastTabStop) {
+            evt.preventDefault();
+            firstTabStop.focus();
+          }
+        }
+      }
+    });
     consultationClose.addEventListener('click', onCloseClick);
     if (overlay) {
       overlay.classList.add('overlay--show');

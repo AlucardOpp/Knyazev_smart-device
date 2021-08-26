@@ -1,5 +1,5 @@
 .socials {
-  margin-right: 208px;
+  margin-right: 192px;
 
   @media (max-width: 1454px) {
     margin-right: 0;
@@ -21,34 +21,16 @@
 }
 
 .socials__container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-bottom: 50px;
   margin-left: -2px;
 }
 
 .socials__container a {
   margin-right: 16px;
-  cursor: default;
-}
 
-.socials__title strong {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 29px;
-  color: $black-service;
-}
-
-.socials__title p {
-  display: block;
-  margin: 0;
-  font-weight: 500;
-  font-family: "Roboto", "Arial", sans-serif;
-  color: $technologies-grey;
-  font-size: 12px;
-  line-height: 14px;
+  @media (max-width: 1454px) {
+    margin-right: 7px;
+  }
 }
 
 .socials__link svg {
@@ -88,20 +70,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $footer-title-black;
-    margin: 0 67px 0 87px;
-  }
-
-  .socials__title p {
-    display: block;
-    margin: 1px 0 0 0;
-    font-weight: 500;
-    font-family: "Roboto", "Arial", sans-serif;
-    color: $technologies-grey;
-    font-size: 12px;
-    line-height: 14px;
-    opacity: 1;
-    letter-spacing: 0;
-    text-transform: none;
+    margin: 0 67px 0 77px;
   }
 
   .socials__container {
@@ -128,16 +97,11 @@
   }
 
   .socials__container {
-    margin: 0 0 22px 0;
+    margin: 0 -7px 22px 0;
   }
 
   .socials p {
     margin: 0 0 31px 0;
     text-align: center;
-  }
-
-  .socials__title p {
-    text-align: start;
-    margin: 0;
   }
 }

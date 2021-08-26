@@ -6,7 +6,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   display: none;
-  z-index: 2;
+  z-index: 3;
 
   &--show {
     display: block;
@@ -22,10 +22,10 @@
 
 .consultation__close {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 19px;
-  top: 16px;
+  width: 30px;
+  height: 30px;
+  right: 14px;
+  top: 13px;
   border: none;
   padding: 0;
   margin: 0;
@@ -39,7 +39,7 @@
     width: 22px;
     height: 1px;
     background-color: $white;
-    left: -1px;
+    left: 4px;
   }
 
   &::before {
@@ -92,6 +92,7 @@
   font-size: 16px;
   line-height: 22px;
   box-sizing: border-box;
+  border-radius: 0;
 
   &::placeholder {
     color: $white;

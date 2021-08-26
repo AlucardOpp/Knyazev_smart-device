@@ -19,13 +19,15 @@
   <header class="page-header">
     <div class="page-header__wrapper page-header__wrapper--nojs">
       <div class="page-header__container">
-        <a href="#" aria-label="Переход на главную страницу">
-          <img src="./img/logo.svg" width="52" height="52" alt="Логотип компании">
+        <a aria-label="Переход на главную страницу">
+          <picture>
+            <source type="image/webp" media="(max-width: 767px)" srcset="./img/logo-header-mobile.webp 1x, ./img/logo-header-mobile@2x.webp 2x">
+            <source type="image/webp" srcset="./img/logo-header.webp 1x, ./img/logo-header@2x.webp 2x">
+            <source media="(max-width: 767px)" srcset="./img/logo-header-mobile.png, ./img/logo-header-mobile.png 2x">
+            <!-- 1х: 202px; 2x: 404px -->
+            <img src="./img/logo-header.png" srcset="./img/logo-header.png 2x" width="202" height="52" alt="Логотип компании">
+          </picture>
         </a>
-        <div class="page-header__title">
-          <strong>Smart Device</strong>
-          <p>умные технологии</p>
-        </div>
       </div>
       <div id="contacts" class="page-header__contacts contacts">
         <ul>
@@ -180,13 +182,13 @@
         <div class="socials__wrapper">
           <h2 class="visually-hidden">Социальные сети</h2>
           <div class="socials__container">
-            <a href="#" aria-label="Переход на главную страницу">
-              <img src="./img/logo.svg" width="52" height="52" alt="Логотип компании">
+            <a aria-label="Переход на главную страницу">
+              <picture>
+                <source type="image/webp" srcset="./img/logo-footer.webp 1x, ./img/logo-footer@2x.webp 2x">
+                <!-- 1х: 216px; 2x: 432px -->
+                <img src="./img/logo-footer.png" srcset="./img/logo-footer.png 2x" width="216" height="52" alt="Логотип компании">
+              </picture>
             </a>
-            <div class="socials__title">
-              <strong>Service Device</strong>
-              <p>умные технологии</p>
-            </div>
           </div>
           <p>1999-2018 SD Service Devices</p>
           <ul>
@@ -218,7 +220,7 @@
         <ul>
           <li data-accordion="sections" class="page-footer__item page-footer__item--nojs">
             <section class="page-footer__sections sections">
-              <h2><button class="sections__button" data-accordion="sections" type="button" aria-label="Открыть вложенную информацию">Разделы сайта</button></h2>
+              <h2><button class="sections__button" tabindex="-1" data-accordion="sections" type="button" aria-label="Открыть вложенную информацию">Разделы сайта</button></h2>
               <ul data-accordion="sections">
                 <li>
                   <a href="#company" aria-label="Переход к разделу о компании">О компании</a>
@@ -246,7 +248,7 @@
           </li>
           <li data-accordion="office" class="page-footer__item page-footer__item--nojs">
             <section class="office">
-              <h2><button class="office__button" data-accordion="office" type="button" aria-label="Открыть вложенную информацию">Наш офис</button></h2>
+              <h2><button class="office__button" tabindex="-1" data-accordion="office" type="button" aria-label="Открыть вложенную информацию">Наш офис</button></h2>
               <ul data-accordion="office">
                 <li>
                   <a href="https://goo.gl/maps/foHUvYod4HQ9cTaD7" aria-label="Переход на карту с адресом офиса" target="_blank">г. Мытищи, Олимпийский проспект, д.10</a>
@@ -287,7 +289,6 @@
 
   <form class="consultation" action="https://echo.htmlacademy.ru" method="post">
     <div class="consultation__wrapper">
-      <button type="button" class="consultation__close" aria-label="Закрыть форму"></button>
       <h2>Закажите звонок</h2>
       <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
       <div class="consultation__field">
@@ -307,6 +308,7 @@
         <input class="visually-hidden" type="checkbox" name="agree-consultation" id="agree-consultation" required aria-label="Согласие на обработку данных" checked>
         <label for="agree-consultation">Я согласен на обработку персональных данных</label>
       </div>
+      <button type="button" class="consultation__close" aria-label="Закрыть форму"></button>
     </div>
   </form>
 

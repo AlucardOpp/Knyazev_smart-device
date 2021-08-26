@@ -6,8 +6,8 @@ const pageFooterItems = document.querySelectorAll('.page-footer__item');
 const accordionTriggers = pageFooterContainer.querySelectorAll('button');
 const consultationForm = document.querySelector('.consultation');
 const consultationClose = document.querySelector('.consultation__close');
+const consultationWrapper = document.querySelector('.consultation__wrapper');
 const formForm = document.querySelector('.form__form');
-const overlay = document.querySelector('.overlay');
 const body = document.querySelector('.body');
 const html = document.querySelector('.page');
 const inputConsultationName = document.querySelector('#name-consultation');
@@ -16,6 +16,7 @@ const textareaConsultationQuestion = document.querySelector('#question-consultat
 const inputFormName = document.querySelector('#name-form');
 const inputFormTel = document.querySelector('#tel-form');
 const textareaFormQuestion = document.querySelector('#question-form');
+let windowHeight = window.screen.height;
 let lastFocusedElement;
 let isStorageSupport = true;
 let storageName = '';
@@ -64,14 +65,15 @@ formForm.addEventListener('submit', () => {
 if (consultationForm && pageHeaderLink && consultationClose) {
   const closeForm = () => {
     consultationForm.classList.remove('consultation--show');
+    consultationWrapper.classList.remove('consultation__wrapper--show');
     consultationClose.removeEventListener('click', onCloseClick);
     document.removeEventListener('keydown', onEscKeydown);
-    document.removeEventListener('click', onOverlayClick);
-    if (overlay) {
-      overlay.classList.remove('overlay--show');
-    }
+    consultationForm.removeEventListener('click', onOverlayClick);
     body.classList.remove('body--hidden');
     html.classList.remove('page--hidden');
+    consultationWrapper.classList.remove('consultation__wrapper--overflow');
+    html.classList.remove('page--overflow');
+    body.classList.remove('body--overflow');
     lastFocusedElement.focus();
   }
 
@@ -84,7 +86,9 @@ if (consultationForm && pageHeaderLink && consultationClose) {
     }
   }
   const onOverlayClick = (evt) => {
-    if (evt.target.classList.contains('overlay')) {
+    const target = evt.target;
+    const itsForm = target === consultationWrapper || consultationWrapper.contains(target);
+    if (!itsForm) {
       closeForm();
     }
   };
@@ -92,6 +96,8 @@ if (consultationForm && pageHeaderLink && consultationClose) {
   pageHeaderLink.addEventListener('click', () => {
     lastFocusedElement = document.activeElement;
     consultationForm.classList.add('consultation--show');
+    consultationForm.addEventListener('click', onOverlayClick);
+    const consultationHeight = consultationWrapper.offsetHeight;
     inputConsultationName.focus();
     $(inputConsultationTel).mask('+7(999)999-9999');
     let focusableElements = consultationForm.querySelectorAll(FOCUSABLE_ELEMENTS_STRING);
@@ -99,7 +105,6 @@ if (consultationForm && pageHeaderLink && consultationClose) {
     let firstTabStop = focusableElements[0];
     let lastTabStop = focusableElements[focusableElements.length - 1];
     document.addEventListener('keydown', onEscKeydown);
-    document.addEventListener('click', onOverlayClick);
     consultationForm.addEventListener('keydown', (evt) => {
       if (evt.key === 'Tab') {
         if (evt.shiftKey) {
@@ -116,11 +121,36 @@ if (consultationForm && pageHeaderLink && consultationClose) {
       }
     });
     consultationClose.addEventListener('click', onCloseClick);
-    if (overlay) {
-      overlay.classList.add('overlay--show');
-    }
     body.classList.add('body--hidden');
     html.classList.add('page--hidden');
+
+    if (consultationForm.classList.contains('consultation--show')) {
+      if (consultationHeight > windowHeight) {
+        consultationWrapper.classList.add('consultation__wrapper--overflow');
+        html.classList.add('page--overflow');
+        body.classList.add('body--overflow');
+      } else {
+        consultationWrapper.classList.add('consultation__wrapper--show');
+        consultationWrapper.classList.remove('consultation__wrapper--overflow');
+        html.classList.remove('page--overflow');
+        body.classList.remove('body--overflow');
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      if (consultationForm.classList.contains('consultation--show')) {
+        windowHeight = window.screen.height;
+        if (consultationHeight > windowHeight) {
+          consultationWrapper.classList.add('consultation__wrapper--overflow');
+          html.classList.add('page--overflow');
+          body.classList.add('body--overflow');
+        } else {
+          consultationWrapper.classList.remove('consultation__wrapper--overflow');
+          html.classList.remove('page--overflow');
+          body.classList.remove('body--overflow');
+        }
+      }
+    });
   });
 
   consultationForm.addEventListener('submit', () => {

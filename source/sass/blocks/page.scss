@@ -8,4 +8,9 @@
     left: 0;
     top: 0;
   }
+
+  &--overflow {
+    overflow-y: hidden;
+    position: static;
+  }
 }

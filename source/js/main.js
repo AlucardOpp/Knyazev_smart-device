@@ -165,6 +165,7 @@ if (consultationForm && pageHeaderLink && consultationClose) {
         localStorage.setItem('question', textareaConsultationQuestion.value);
       }
     }
+    closeForm();
   });
 }
 

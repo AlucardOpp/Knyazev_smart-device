@@ -16,6 +16,10 @@
 .sections ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.sections__lists {
   margin: 0 0 0 -2px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -54,24 +58,13 @@
   letter-spacing: 0.03em;
 }
 
-.sections__products {
-  grid-row: 2 / 3;
-}
-
-.sections__production {
-  grid-row: 3 / 4;
-}
-
-.sections__mounting {
-  grid-row: 4 / 5;
-}
-
 @media (max-width: $tablet-width) {
   .sections {
     margin-left: 27px;
     max-width: none;
   }
 
+  .sections__lists,
   .sections ul {
     display: flex;
     flex-direction: column;

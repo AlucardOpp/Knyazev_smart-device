@@ -29,7 +29,7 @@
   cursor: text;
 }
 
-.page-footer__container ul:first-child {
+.page-footer__container ul:only-child {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -43,7 +43,7 @@
     padding-top: 19px;
   }
 
-  .page-footer__container ul:first-child {
+  .page-footer__container ul:only-child {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -73,8 +73,17 @@
   }
 
   .page-footer__item ul {
-    margin: 6px 33px 23px 15px;
+    margin-left: 15px;
+    margin-right: 33px;
     display: none;
+
+    &:first-of-type {
+      margin-top: 6px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 23px;
+    }
   }
 
   .page-footer__item--show ul {
